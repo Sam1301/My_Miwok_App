@@ -35,7 +35,7 @@ public class ColorsActivity extends AppCompatActivity {
         setContentView(R.layout.word_list);
 
         // Create a list of words
-        final ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("red", "weṭeṭṭi", R.drawable.color_red,
                 R.raw.color_red));
         words.add(new Word("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow,
@@ -86,7 +86,7 @@ public class ColorsActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
-        mMediaPlayer.release();;
+        mMediaPlayer.release();
         mMediaPlayer = null;
         super.onStop();
     }

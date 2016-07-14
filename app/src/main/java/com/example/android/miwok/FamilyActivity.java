@@ -35,7 +35,7 @@ public class FamilyActivity extends AppCompatActivity {
         setContentView(R.layout.word_list);
 
         // Create a list of words
-        final ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<>();
         words.add(new Word("father", "әpә", R.drawable.family_father,
                 R.raw.family_father));
         words.add(new Word("mother", "әṭa", R.drawable.family_mother,
@@ -90,7 +90,7 @@ public class FamilyActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
-        mMediaPlayer.release();;
+        mMediaPlayer.release();
         mMediaPlayer = null;
         super.onStop();
     }
