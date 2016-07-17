@@ -25,6 +25,7 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
+        // add fragment
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, new NumbersFragment()).commit();
     }
