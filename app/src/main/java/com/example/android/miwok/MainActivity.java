@@ -15,14 +15,14 @@
  */
 package com.example.android.miwok;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.TextView;
 
+/**
+ * Displays a viewpager where pages show Miwok and English translations for different categories
+ */
 public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
@@ -33,84 +33,17 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        // Find the View that shows the numbers category
-        TextView numbers = (TextView) findViewById(R.id.numbers);
+        // create viewpager object
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-        // Set a click listener on that View
-        if (numbers != null) {
-            numbers.setOnClickListener(new OnClickListener() {
-                // The code in this method will be executed when the numbers category is clicked on.
-                @Override
-                public void onClick(View view) {
-                    // Create a new intent to open the {@link NumbersActivity}
-                    Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+        // create PagerAdapter object
+        CategoryAdapter adapter = new CategoryAdapter(getSupportFragmentManager());
 
-                    // Start the new activity
-                    startActivity(numbersIntent);
-                }
-            });
+        // set PagerAdapter on viewpager
+        if (viewPager != null) {
+            viewPager.setAdapter(adapter);
         } else {
-            Log.e(LOG_TAG, "numbers null");
-        }
-
-        // Find the View that shows the family category
-        TextView family = (TextView) findViewById(R.id.family);
-
-        // Set a click listener on that View
-        if (family != null) {
-            family.setOnClickListener(new OnClickListener() {
-                // The code in this method will be executed when the family category is clicked on.
-                @Override
-                public void onClick(View view) {
-                    // Create a new intent to open the {@link FamilyActivity}
-                    Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
-
-                    // Start the new activity
-                    startActivity(familyIntent);
-                }
-            });
-        } else {
-            Log.e(LOG_TAG, "family null");
-        }
-
-        // Find the View that shows the colors category
-        TextView colors = (TextView) findViewById(R.id.colors);
-
-        // Set a click listener on that View
-        if (colors != null) {
-            colors.setOnClickListener(new OnClickListener() {
-                // The code in this method will be executed when the colors category is clicked on.
-                @Override
-                public void onClick(View view) {
-                    // Create a new intent to open the {@link ColorsActivity}
-                    Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
-
-                    // Start the new activity
-                    startActivity(colorsIntent);
-                }
-            });
-        } else {
-            Log.e(LOG_TAG, "colors null");
-        }
-
-        // Find the View that shows the phrases category
-        TextView phrases = (TextView) findViewById(R.id.phrases);
-
-        // Set a click listener on that View
-        if (phrases != null) {
-            phrases.setOnClickListener(new OnClickListener() {
-                // The code in this method will be executed when the phrases category is clicked on.
-                @Override
-                public void onClick(View view) {
-                    // Create a new intent to open the {@link PhrasesActivity}
-                    Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
-
-                    // Start the new activity
-                    startActivity(phrasesIntent);
-                }
-            });
-        } else {
-            Log.e(LOG_TAG, "phrases null");
+            Log.e(LOG_TAG, "ViewPager object null");
         }
     }
 }
