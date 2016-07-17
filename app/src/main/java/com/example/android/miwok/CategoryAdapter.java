@@ -1,5 +1,6 @@
 package com.example.android.miwok;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -9,14 +10,18 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 public class CategoryAdapter extends FragmentPagerAdapter {
 
+    // context of parent activity
+    Context mContext;
+
     /**
      * Crete new {@link CategoryAdapter} object.
      *
      * @param fm is the fragment manager that will keep each fragment's state in the adapter
      *           across swipes.
      */
-    public CategoryAdapter(FragmentManager fm) {
+    public CategoryAdapter(FragmentManager fm, Context context) {
         super(fm);
+        mContext = context;
     }
 
     /**
@@ -35,8 +40,9 @@ public class CategoryAdapter extends FragmentPagerAdapter {
                 return new ColorsFragment();
             case 3:
                 return new PhrasesFragment();
+            default:
+                return null;
         }
-        return null;
     }
 
     /**
@@ -46,5 +52,21 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return 4;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        switch (position) {
+            case 0:
+                return mContext.getResources().getString(R.string.category_numbers);
+            case 1:
+                return mContext.getResources().getString(R.string.category_family);
+            case 2:
+                return mContext.getResources().getString(R.string.category_colors);
+            case 3:
+                return mContext.getResources().getString(R.string.category_phrases);
+            default:
+                return null;
+        }
     }
 }
