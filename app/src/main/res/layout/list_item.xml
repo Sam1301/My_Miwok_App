@@ -59,6 +59,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:contentDescription="@string/play_arrow_content_discription"
-            android:src="@drawable/ic_play_arrow_white_36dp" />
+            android:src="@drawable/ic_play_arrow_white_24dp" />
     </LinearLayout>
 </LinearLayout>
