@@ -26,7 +26,7 @@
     <string name="category_numbers">Numbers</string>
 
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
-    <string name="category_family">Family Members</string>
+    <string name="category_family">Family</string>
     <string name="play_arrow_content_discription">play sound</string>
     <string name="word_image_content_description">word image</string>
 

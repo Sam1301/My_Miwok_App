@@ -58,13 +58,13 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return mContext.getResources().getString(R.string.category_numbers);
+                return mContext.getString(R.string.category_numbers);
             case 1:
-                return mContext.getResources().getString(R.string.category_family);
+                return mContext.getString(R.string.category_family);
             case 2:
-                return mContext.getResources().getString(R.string.category_colors);
+                return mContext.getString(R.string.category_colors);
             case 3:
-                return mContext.getResources().getString(R.string.category_phrases);
+                return mContext.getString(R.string.category_phrases);
             default:
                 return null;
         }

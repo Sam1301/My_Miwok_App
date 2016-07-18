@@ -18,17 +18,30 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/primary_color</item>
         <item name="colorPrimaryDark">@color/primary_dark_color</item>
+        <item name="actionBarStyle">@style/MiwokActionBarStyle</item>
+        <!--Remove shadow below action bar Android < 5.0-->
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
-    <!-- Style for a category of vocabulary words -->
-    <style name="CategoryStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/list_item_height</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:padding">16dp</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    <!--Action Bar Style-->
+    <style name="MiwokActionBarStyle" parent="style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <!--Remove the shadow below the app bar-->
+        <!--<item name="android:elevation">0dp</item>-->
+        <!--Support Library Compatibility-->
+        <item name="elevation">0dp</item>
+    </style>
+
+    <!--Style for tabs-->
+    <style name="TabsStyle" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@color/primary_color</item>
+        <item name="tabIndicatorColor">@android:color/white</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabTextAppearance">@style/CategoryTabs</item>
+    </style>
+
+    <!--Style for tab text-->
+    <style name="CategoryTabs" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/tabs_text_color</item>
     </style>
 
     <!-- Style for a list item words -->
@@ -41,4 +54,5 @@
     </style>
 
 
+    <color name="tabs_text_color">#A8A19E</color>
 </resources>
